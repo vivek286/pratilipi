@@ -1,11 +1,14 @@
 import { useUser } from '../lib/hooks'
 import Layout from '../components/layout'
-
+import Style from './style.module.css'
 const Home = () => {
   const user = useUser()
-
+  let user_data=null;
+  if(user){
+    
+  }
   return (
-    <Layout>
+    <Layout className={Style.body}>
       <h1>Passport.js Example</h1>
 
       <p>Steps to test the example:</p>

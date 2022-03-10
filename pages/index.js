@@ -1,14 +1,37 @@
 import { useUser } from '../lib/hooks'
 import Layout from '../components/layout'
 import Style from './style.module.css'
-const Home = () => {
-  const user = useUser()
-  let user_data=null;
-  if(user){
-    
+import React, { useRef, useState } from 'react';
+// import { useState } from 'react/cjs/react.development'
+const  Home = () => {
+  let user= useUser();
+  async function findstory(){
+    const response=await fetch('./api/daily_data',{
+      method:'POST',
+  body:(JSON.stringify(user)),
+  headers:{
+      'content-type':'application/json'
   }
+    });
+    console.log(response);
+    let temp=(await await response.json());
+    // console.log(temp);
+  }
+
+  let user_data=null;
+ if(user==null){
   return (
     <Layout className={Style.body}>
+      <h1>Passport.js Example</h1>
+
+      Please Wait or try Again....
+    </Layout>
+  )
+
+}else{
+  findstory();
+  return (
+  <Layout className={Style.body}>
       <h1>Passport.js Example</h1>
 
       <p>Steps to test the example:</p>
@@ -44,5 +67,7 @@ const Home = () => {
     </Layout>
   )
 }
+}
+
 
 export default Home

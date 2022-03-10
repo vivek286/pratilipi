@@ -11,8 +11,8 @@ const db=client.db();
 
 
 
-const meetupsCollections=db.collection('story');
-const result=await meetupsCollections.insertMany(data);
+const meetupsCollections=db.collection('user_record');
+const result=await meetupsCollections.updateOne(data);
 console.log(result.description);
 client.close();
 

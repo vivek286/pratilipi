@@ -52,11 +52,11 @@ const  Home = () => {
       {user && (
         <div className={Style.containers}>
           <h2>Currently logged in as: {user.username}</h2>
-          {/* {datat.story?.map((dat,index)=>(
+          {datat.story?.map((dat,index)=>(
             
-            // <Dispaly key={index} data={dat} ind={index} iddd={String(datat._id)} />
-          )) */}
-{/* } */}
+            <Dispaly key={index} data={dat} ind={index} iddd={String(datat._id)} />
+          ))
+ } 
           {/* <pre>{JSON.stringify(datat, null, 2)}</pre> */}
         </div>
       )}

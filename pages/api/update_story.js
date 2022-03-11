@@ -17,7 +17,7 @@ const result=await meetupsCollections.findOneAndUpdate({_id:ObjectId(data.user)}
 // console.log(result.description);
 client.close();
 
-res.status(201).json({message: 'data inserted'});
+res.status(201).json({message: 'data updated'});
 
 
 }

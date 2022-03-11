@@ -1,5 +1,18 @@
 .body{
     background-color: rgb(31 41 55);
+    color: white;
+    display: inline-block;
+    margin: 2%;
+    padding: 1%;
+}
+.header{
+    
+    font-weight: 600;
+    
+
+}
+.containers{
+    display: inline-block;
 }
 .try{
     color:white;

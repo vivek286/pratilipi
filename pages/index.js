@@ -1,11 +1,15 @@
 import { useUser } from '../lib/hooks'
 import Layout from '../components/layout'
+import Dispaly from './display'
 import Style from './style.module.css'
 import React, { useRef, useState } from 'react';
 // import { useState } from 'react/cjs/react.development'
 const  Home = () => {
   let user= useUser();
+  let [datat,setdata]=useState({});
+  const [istrue,setistrue]=useState(true);
   async function findstory(){
+    setistrue(false);
     const response=await fetch('./api/daily_data',{
       method:'POST',
   body:(JSON.stringify(user)),
@@ -16,54 +20,48 @@ const  Home = () => {
     console.log(response);
     let temp=(await await response.json());
     // console.log(temp);
+    setdata(temp);
   }
 
   let user_data=null;
  if(user==null){
   return (
     <Layout className={Style.body}>
-      <h1>Passport.js Example</h1>
+      <h1>Log in </h1>
 
       Please Wait or try Again....
     </Layout>
   )
 
 }else{
-  findstory();
+  if(istrue)findstory();
   return (
   <Layout className={Style.body}>
-      <h1>Passport.js Example</h1>
-
-      <p>Steps to test the example:</p>
+      <h3>Steps for viewing api results</h3>
 
       <ol>
-        <li>Click Login and enter a username and password.</li>
+        <li>Below displayed are all stories present in DB.User must be logged in inorder to access them.</li>
         <li>
-          You'll be redirected to Home. Click on Profile, notice how your
-          session is being used through a token stored in a cookie.
+          Click on any story and it will show you all chapters unlocked for user.
         </li>
         <li>
-          Click Logout and try to go to Profile again. You'll get redirected to
-          Login.
+          there is a button to unlock more chapters
         </li>
       </ol>
 
       {user && (
-        <>
-          <p>Currently logged in as:</p>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-        </>
+        <div className={Style.containers}>
+          <h2>Currently logged in as: {user.username}</h2>
+          {datat.story?.map((dat,index)=>(
+            
+            <Dispaly key={index} data={dat} ind={index} iddd={String(datat._id)} />
+          ))
+}
+          {/* <pre>{JSON.stringify(datat, null, 2)}</pre> */}
+        </div>
       )}
 
-      <style jsx>{`
-        li {
-          margin-bottom: 0.5rem;
-        }
-        pre {
-          white-space: pre-wrap;
-          word-wrap: break-word;
-        }
-      `}</style>
+     
     </Layout>
   )
 }

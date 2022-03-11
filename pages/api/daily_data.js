@@ -9,7 +9,7 @@ async function handler(req,res){
     const db=client.db();
      
      const user_store=db.collection('user_record');
-const result=await user_store.findOne({username:data.username});
+const result=await user_store.findOne({id:data.id});
 
 client.close();
 

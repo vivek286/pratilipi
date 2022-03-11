@@ -44,6 +44,12 @@ const Home = (props) => {
           <>
             <h2>Story Name : {data.story[data.storyno].name}</h2>
             <button onClick={()=>setall()}>Unlock more Chapter</button>
+            <br/>
+            <br/>
+            <br/>
+
+          <a href="/">  <button>Home</button></a>
+          <h3>Max Chapters : {tempp.length} Unlocked : {unlo}</h3>
             <pre>{JSON.stringify(stoies, null, 2)}</pre>
           </>
         ):("no user")}
@@ -72,7 +78,7 @@ const collection=db.collection('user_record');
     let post=await collection.findOne({_id:new ObjectId(url_id[0])});
     post.storyno=parseInt(url_id[1]);
     const temp=( JSON.stringify(post));
-    
+    // console.log(post);
    
     return {
         props:{

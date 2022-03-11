@@ -17,19 +17,19 @@ const Home = (props) => {
      
       if(unlo+1<=tempp.length){
       
-        let toupdate=data.story;
-        toupdate[data.storyno-1].unlocked=unlo;
-        let api_data={
-          user:data._id,
-          stor:toupdate
-        }
-          const response=await fetch('../api/update_story',{
-      method:'POST',
-  body:(JSON.stringify(api_data)),
-  headers:{
-      'content-type':'application/json'
-  }
-    });
+  //       let toupdate=data.story;
+  //       toupdate[data.storyno-1].unlocked=unlo;
+  //       let api_data={
+  //         user:data._id,
+  //         stor:toupdate
+  //       }
+  //         const response=await fetch('../api/update_story',{
+  //     method:'POST',
+  // body:(JSON.stringify(api_data)),
+  // headers:{
+  //     'content-type':'application/json'
+  // }
+  //   });
   
       }
     }

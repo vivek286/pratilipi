@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Router from 'next/router'
-import { useUser } from '../../lib/hooks'
-import Layout from '../../components/layout'
-import Form from '../../components/form'
+
 import { MongoClient,ObjectId } from 'mongodb';
 
 const Home = (props) => {
@@ -17,15 +15,17 @@ const Home = (props) => {
     // useEffect( () => {
     //   get_user();
     // });
+    let tempp=data.story[data.storyno].chapter;
+    for(let i=0;i<tempp.length;i++){
     return (
     <div >
-        
-        {user!=null? (
+      
+        {/* {user!=null? (
           <>
             <p>Currently logged in as:</p>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            <pre>{JSON.stringify(tempp, null, 2)}</pre>
           </>
-        ):("no user")}
+        ):("no user")} */}
   
         <style jsx>{`
           li {
@@ -39,25 +39,9 @@ const Home = (props) => {
       </div>
     )
   }
+}
   
   
   
   export default Home;
-  export async function getServerSideProps(context){
-    const url_id=String(context.params.id);
-    const client=await MongoClient.connect('mongodb+srv://Vivek:TeNzP6QPWszrWcKX@cluster0.hmbhl.mongodb.net/Pratilipi?retryWrites=true&w=majority');
-const db=client.db();
-const collection=db.collection('user_record');
-    const post=await collection.findOne({_id:new ObjectId(url_id)});
-    const temp=( JSON.stringify(post));
-   
-    return {
-        props:{
-          posts:temp
-            
-            
-        }
-    }
-}
-
   

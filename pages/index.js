@@ -56,7 +56,7 @@ const  Home = () => {
             
             // <Dispaly key={index} data={dat} ind={index} iddd={String(datat._id)} />
           )) */}
-}
+{/* } */}
           {/* <pre>{JSON.stringify(datat, null, 2)}</pre> */}
         </div>
       )}

@@ -8,10 +8,10 @@ const  Home = (props) => {
   return (
   <div className={Style.body}>
     <div className={Style.header}>
-        <p>book:- {props.data.name!=null?props.data.name:""} <br/> by:- {props.data.by!=null?props.data.by:""}</p>
+        <p>book:- {props.name!=null?props.name:""} <br/> by:- {props.by!=null?props.by:""}</p>
 </div>
 <div className={Style.content}>
-    Book Description <br/>{props.data.content!=null?props.data.content:""}
+    Book Description <br/>{props.content!=null?props.content:""}
 </div>
 <a href={`/view/${String(props.iddd!=null?props.iddd:"")}-${String(props.ind?props.ind+1:"")}`}><button >View Chapters</button></a>
 

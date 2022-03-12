@@ -1,27 +1,26 @@
-# Passport.js Example
-
-This example show how to use [Passport.js](http://www.passportjs.org) with Next.js. The example features cookie based authentication with username and password.
-
-The example shows how to do a login, signup and logout; and to get the user info using a hook with [SWR](https://swr.vercel.app).
-
-A database is not included. You can use any database you want and add it [in this file](lib/user.js).
-
-The login cookie is httpOnly, meaning it can only be accessed by the API, and it's encrypted using [@hapi/iron](https://hapi.dev/family/iron) for more security.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-passport&project-name=with-passport&repository-name=with-passport)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
+# Pratilipi Backend assingment
+ To Run project in your local server follow steps:
+ 1. fork and clone the repo.
+ 2. use below commands
 ```bash
-npx create-next-app --example with-passport with-passport-app
+npm install
+npm run dev
 # or
-yarn create next-app --example with-passport with-passport-app
+yarn install
+yarn run dev
 ```
+### [User Authentication Code](https://github.com/vivek286/pratilipi/tree/main/lib)  
+### [Data Fetching and CRUD API](https://github.com/vivek286/pratilipi/tree/main/pages/api)
+ 
+### You can view live [HERE](https://pratilipi-eta.vercel.app/). 
+ 
+### Note:- it only displays data fetched from API in json format i.e. UI is not interactive. 
+# About Implementation 
+ ### API
+ ![API MODEL](https://user-images.githubusercontent.com/68116663/158016454-924b4b9f-f06e-4f18-a3e5-089187baefa0.jpeg)
+ ### UI MODEL
+ ![User UI](https://user-images.githubusercontent.com/68116663/158016490-18345e1d-1abe-455c-9320-68fa4530d8eb.jpeg)
 
+
+ 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).

@@ -53,11 +53,11 @@ const  Home = () => {
         <div className={Style.containers}>
           <h2>Currently logged in as: {user.username}</h2>
           {datat.story?.map((dat,index)=>(
-            // {console.log(dat);}
+            
             <Dispaly key={index} name={dat.name} by={dat.by} content={dat.content}  ind={index} iddd={String(datat._id)} />
           ))
  } 
-          {/* <pre>{JSON.stringify(datat, null, 2)}</pre> */}
+          
         </div>
       )}
 
